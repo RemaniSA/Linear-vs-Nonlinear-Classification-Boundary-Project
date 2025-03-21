@@ -1,3 +1,5 @@
 # Machine Learning for Quantitative Professionals Coursework
  
-![GCW3 Cousework for Machine Learning for Quantitative Professionals](https://github.com/RemaniSA/Decision-Tree-and-Random-Forest-Project/blob/main/Task.jpg)
+![Individual Cousework for Machine Learning for Quantitative Professionals p1](https://github.com/RemaniSA/Linear-vs-Nonlinear-Classification-Boundary-Project/blob/main/images/Task_Page1.jpg)
+
+![Individual Cousework for Machine Learning for Quantitative Professionals p2](https://github.com/RemaniSA/Linear-vs-Nonlinear-Classification-Boundary-Project/blob/main/images/Task_Page2.jpg)
