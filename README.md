@@ -57,7 +57,7 @@ Linear-vs-Nonlinear-Classification-Boundary-Project/
 ├── Report.pdf                    # Final report
 ├── Task.pdf                      # Coursework brief
 ├── Images/                       # Plots and coursework brief in Images
-├── requirements.txt              # Project dependencies
+├── requirements.txt              # Project requirements
 └── README.md
 ```
 
