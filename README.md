@@ -52,11 +52,11 @@ To test robustness, the models were re-evaluated in two modified settings:
 
 ```
 Linear-vs-Nonlinear-Classification-Boundary-Project/
-├── code/                          # Python script or notebook
+├── chd_classification.py         # Python script
 ├── heart-disease.csv             # Dataset
 ├── Report.pdf                    # Final report
 ├── Task.pdf                      # Coursework brief
-├── Images/                       # Plots and performance visualisations
+├── Images/                       # Plots and coursework brief in Images
 ├── requirements.txt              # Project dependencies
 └── README.md
 ```
