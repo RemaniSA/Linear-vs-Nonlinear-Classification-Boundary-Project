@@ -1,21 +1,25 @@
-# Linear vs Nonlinear Classification Boundary Project (2024/25)
+# Coronary Heart Disease Classifier Project
 
-This project was developed as part of the MSc Mathematical Trading and Finance programme at Bayes Business School (formerly Cass). It investigates whether a linear or nonlinear decision boundary best classifies Coronary Heart Disease (CHD) in a high-risk male population from the Western Cape, South Africa.
+This project was developed as part of the MSc Mathematical Trading and Finance programme at Bayes Business School (formerly Cass). It investigates whether a linear or nonlinear classifier best models Coronary Heart Disease (CHD) risk in a high-risk male population from the Western Cape, South Africa.
 
-## Overview
+## Problem
 
-Using a dataset of 462 patients and nine clinical, lifestyle, and demographic features, the analysis compares the performance of linear and nonlinear classification models. The objective is twofold:
+The aim of the project was to classify CHD risk using clinical and lifestyle data from 462 patients, drawing on nine input variables. Eleven classification algorithms were tested, including logistic regression, LDA, SVMs, decision trees, and boosting methods. The central question was whether a nonlinear boundary significantly improves classification performance or if simpler models suffice in practice.
 
-1. Identify the model with the best classification performance.
-2. Determine whether the underlying decision boundary is linear.
+## My Reflections
 
-## Methodology
+This project reinforced the idea that the use case determines the metric; are we screening a population broadly (precision), or ruling people out with certainty (recall)? While it's tempting to reach for ensemble or deep learning models, I found that simpler methods (LDA, Logistic Regression) can outperform more complex models, especially when the decision boundary is inherently linear. One of the biggest takeaways was learning that model robustness often hinges more on boundary geometry than model class.
 
-- **Exploratory Data Analysis**: Distribution plots, boxplots, PCA, and pairplots were used to assess class separability and outlier impact.
-- **Baseline Model**: Logistic Regression with Ridge Penalty was selected as a regularised linear classifier and benchmark.
-- **Model Comparison**: Eleven classifiers were tested using 10-fold cross-validation and tuned via grid search.
+## Methods
 
-Models tested:
+- Exploratory Data Analysis: PCA, boxplots, class distribution analysis, pairplots
+- Baseline Model: Logistic Regression with Ridge penalty
+- Model Comparison: 11 classifiers evaluated using 10-fold cross-validation
+- Sensitivity Analysis:
+  - Removed alcohol consumption feature
+  - Filtered outliers via IQR method
+
+## Classifiers Tested
 
 - Logistic Regression (L1, L2, None)
 - Linear Discriminant Analysis (LDA)
@@ -27,7 +31,21 @@ Models tested:
 - AdaBoost
 - Gradient Boosting
 
-## Results Summary
+## Repository Structure
+
+```
+Linear-vs-Nonlinear-Classification-Boundary-Project/
+├── datasets/
+├── images/
+├── .gitignore
+├── README.md
+├── Report.pdf
+├── Task.pdf
+├── chd_classification.py
+├── requirements.txt
+```
+
+## Summary of Results
 
 | Model            | F1-Score | ROC-AUC | Precision | Recall | Decision Boundary |
 |------------------|----------|---------|-----------|--------|--------------------|
@@ -39,57 +57,35 @@ Models tested:
 | Decision Tree    | 46%      | 0.59    | 40%       | 53%    | Nonlinear          |
 | kNN (CV)         | 46%      | 0.71    | 52%       | 41%    | Nonlinear          |
 
-> LDA achieved the highest F1-Score and recall, suggesting a linear boundary is most effective for this dataset.
+## Requirements
 
-## Sensitivity Analysis
-
-To test robustness, the models were re-evaluated in two modified settings:
-
-- **Sans Alcohol**: Alcohol was removed from the feature set. Naive Bayes outperformed others slightly (66% F1), but linear models remained stable.
-- **Sans Outliers**: All outliers were removed using IQR filtering. Performance dropped across models. QDA led this scenario with a 59% F1-Score, suggesting the original linear boundary may be influenced by edge cases.
-
-## Repository Structure
-
-```
-Linear-vs-Nonlinear-Classification-Boundary-Project/
-├── chd_classification.py         # Python script
-├── heart-disease.csv             # Dataset
-├── Report.pdf                    # Final report
-├── Task.pdf                      # Coursework brief
-├── Images/                       # Plots and coursework brief in Images
-├── requirements.txt              # Project requirements
-└── README.md
-```
-
-## How to Run
-
-1. Clone the repository:
-```bash
-git clone https://github.com/RemaniSA/Linear-vs-Nonlinear-Classification-Boundary-Project.git
-cd Linear-vs-Nonlinear-Classification-Boundary-Project
-```
-
-2. Install requirements:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run `chd_classification.py`
+See `requirements.txt` for package versions.
 
-## Requirements
+## How to Run
 
-- Python 3.8+
-- pandas, numpy, matplotlib, seaborn
-- scikit-learn
+```bash
+git clone https://github.com/RemaniSA/Linear-vs-Nonlinear-Classification-Boundary-Project.git
+cd Linear-vs-Nonlinear-Classification-Boundary-Project
+python chd_classification.py
+```
 
-See `requirements.txt` for exact versions.
+## Further Reading
+
+- James, Witten, Hastie & Tibshirani: *An Introduction to Statistical Learning*
+- Hastie, Tibshirani & Friedman: *The Elements of Statistical Learning*
+- Kuhn & Johnson: *Applied Predictive Modeling*
 
 ## Author
 
-Shaan Ali Remani
+- Shaan Ali Remani
 
-# Coursework Brief
- 
-![Individual Cousework for Machine Learning for Quantitative Professionals p1](https://github.com/RemaniSA/Linear-vs-Nonlinear-Classification-Boundary-Project/blob/main/images/Task_Page1.jpg)
+---
 
-![Individual Cousework for Machine Learning for Quantitative Professionals p2](https://github.com/RemaniSA/Linear-vs-Nonlinear-Classification-Boundary-Project/blob/main/images/Task_Page2.jpg)
+### Connect
+
+- [LinkedIn](https://www.linkedin.com/in/shaan-ali-remani)  
+- [GitHub](https://github.com/RemaniSA)
